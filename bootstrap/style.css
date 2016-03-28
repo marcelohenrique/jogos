@@ -1,0 +1,108 @@
+.style {
+	/* margin: 1px 0px 1px 0px; */
+	min-height: 50px;
+	padding: 1px;
+	/* border: 1px solid black; */
+}
+
+.style-header {
+	color: #fff;
+	background-color: #0b6fc0;
+}
+
+.gutter-header {
+	margin: 1px -14px 1px 0px;
+}
+
+.style-body {
+	background-color: #f6bb4c;
+}
+
+.gutter-body {
+	margin: 1px 0px 1px -14px;
+}
+
+.gutter-body:hover {
+	background-color: #FBFF00;
+}
+
+.gutter-result {
+	margin: 1px;
+}
+
+.process-card {
+	background-color: #bad0ee;
+	margin: 3px;
+	border-radius: 3px;
+	padding: 3px;
+	min-height: 50px;
+}
+
+/* Mixin */
+@mixin .vertical-align ($position: relative ) {
+	position: $position;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.text-middle {
+	/* @include vertical-align(); */
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.fail {
+	background: #f00;
+	color: #fff;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	/* padding: 5px; */
+	text-shadow: none;
+}
+
+.sucess {
+	background: #2be66b;
+	color: #fff;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	/* padding: 5px; */
+	text-shadow: none;
+}
+
+.td-hover {
+	background-color: #93C00B;
+}
+
+.gutter-body ul {
+	padding-left: 20px;
+}
+
+.navbar-custom {
+	background-color: white;
+}
+
+#grupos {
+	font-size: 12px;
+}
+
+table {
+	width: 100%;
+}
+
+th {
+	width: 20%;
+	border: 1px solid white;
+}
+
+td {
+	/* width: 70%; */
+	border: 1px solid white;
+	height: 50px;
+}

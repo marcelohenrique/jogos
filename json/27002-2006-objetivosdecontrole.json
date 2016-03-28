@@ -1,0 +1,246 @@
+{
+   "nome":"27002:2006 - Objetivos de Controle",
+   "linhas":[
+      {
+         "id":"5",
+         "nome":"5. Política de Segurança da Informação"
+      },
+      {
+         "id":"6",
+         "nome":"6. Organizando a segurança da informação"
+      },
+      {
+         "id":"7",
+         "nome":"7. Gestão de ativos"
+      },
+      {
+         "id":"8",
+         "nome":"8. Segurança em recursos humanos"
+      },
+      {
+         "id":"9",
+         "nome":"9. Segurança física e do ambiente"
+      },
+      {
+         "id":"10",
+         "nome":"10. Gerenciamento das operações e comunicações"
+      },
+      {
+         "id":"11",
+         "nome":"11. Controle de acessos"
+      },
+      {
+         "id":"12",
+         "nome":"12. Aquisição, desenvolvimento e manutenção de sistemas de informação"
+      },
+      {
+         "id":"13",
+         "nome":"13. Gestão de incidentes de segurança da informação"
+      },
+      {
+         "id":"14",
+         "nome":"14. Gestão da continuidade do negócio"
+      },
+      {
+         "id":"15",
+         "nome":"15. Conformidade"
+      }
+   ],
+   "processos":[
+      {
+         "id":"5",
+         "pid":"5.1",
+         "nome":"Política de segurança da informação"
+      },
+      {
+         "id":"6",
+         "pid":"6.1",
+         "nome":"Infra-estrutura da segurança da informação"
+      },
+      {
+         "id":"6",
+         "pid":"6.2",
+         "nome":"Partes externas"
+      },
+      {
+         "id":"7",
+         "pid":"7.1",
+         "nome":"Responsabilidade pelos ativos"
+      },
+      {
+         "id":"7",
+         "pid":"7.2",
+         "nome":"Classificação da informação"
+      },
+      {
+         "id":"8",
+         "pid":"8.1",
+         "nome":"Antes da contratação"
+      },
+      {
+         "id":"8",
+         "pid":"8.2",
+         "nome":"Durante a contratação"
+      },
+      {
+         "id":"8",
+         "pid":"8.3",
+         "nome":"Encerramento ou mudança da contratação"
+      },
+      {
+         "id":"9",
+         "pid":"9.1",
+         "nome":"Áreas seguras"
+      },
+      {
+         "id":"9",
+         "pid":"9.2",
+         "nome":"Segurança de Equipamentos"
+      },
+      {
+         "id":"10",
+         "pid":"10.1",
+         "nome":"Procedimentos e responsabilidades operacionais"
+      },
+      {
+         "id":"10",
+         "pid":"10.2",
+         "nome":"Gerenciamento de serviços terceirizados"
+      },
+      {
+         "id":"10",
+         "pid":"10.3",
+         "nome":"Planejamento e aceitação de sistemas"
+      },
+      {
+         "id":"10",
+         "pid":"10.4",
+         "nome":"Proteção contra códigos maliciosos e códigos móveis"
+      },
+      {
+         "id":"10",
+         "pid":"10.5",
+         "nome":"Cópias de segurança"
+      },
+      {
+         "id":"10",
+         "pid":"10.6",
+         "nome":"Gerenciamento da segurança em redes"
+      },
+      {
+         "id":"10",
+         "pid":"10.7",
+         "nome":"Manuseio de mídias"
+      },
+      {
+         "id":"10",
+         "pid":"10.8",
+         "nome":"Troca de Informações"
+      },
+      {
+         "id":"10",
+         "pid":"10.9",
+         "nome":"Serviços de comércio eletrônico"
+      },
+      {
+         "id":"10",
+         "pid":"10.10",
+         "nome":"Monitoramento"
+      },
+      {
+         "id":"11",
+         "pid":"11.1",
+         "nome":"Requisitos de negócio para controle de acesso"
+      },
+      {
+         "id":"11",
+         "pid":"11.2",
+         "nome":"Gerenciamento de acesso do usuário"
+      },
+      {
+         "id":"11",
+         "pid":"11.3",
+         "nome":"Responsabilidades dos usuários"
+      },
+      {
+         "id":"11",
+         "pid":"11.4",
+         "nome":"Controle de acesso à rede"
+      },
+      {
+         "id":"11",
+         "pid":"11.5",
+         "nome":"Controle de acesso ao sistema operacional"
+      },
+      {
+         "id":"11",
+         "pid":"11.6",
+         "nome":"Controle de acesso à aplicação e à informação"
+      },
+      {
+         "id":"11",
+         "pid":"11.7",
+         "nome":"Computação móvel e trabalho remoto"
+      },
+      {
+         "id":"12",
+         "pid":"12.1",
+         "nome":"Requisitos de segurança de sistemas de informação"
+      },
+      {
+         "id":"12",
+         "pid":"12.2",
+         "nome":"Processamento correto nas aplicações"
+      },
+      {
+         "id":"12",
+         "pid":"12.3",
+         "nome":"Controles criptográficos"
+      },
+      {
+         "id":"12",
+         "pid":"12.4",
+         "nome":"Segurança dos arquivos de sistema"
+      },
+      {
+         "id":"12",
+         "pid":"12.5",
+         "nome":"Segurança nos processos de desenvolvimento e suporte"
+      },
+      {
+         "id":"12",
+         "pid":"12.6",
+         "nome":"Gestão de vulnerabilidades técnicas"
+      },
+      {
+         "id":"13",
+         "pid":"13.1",
+         "nome":"Notificação de fragilidades e eventos de segurança da informação"
+      },
+      {
+         "id":"13",
+         "pid":"13.2",
+         "nome":"Gestão de incidentes de segurança da informação e melhorias"
+      },
+      {
+         "id":"14",
+         "pid":"14.1",
+         "nome":"Aspectos da gestão da continuidade do negócio, relativos à segurança da informação"
+      },
+      {
+         "id":"15",
+         "pid":"15.1",
+         "nome":"Conformidade com requisitos legais"
+      },
+      {
+         "id":"15",
+         "pid":"15.2",
+         "nome":"Conformidade com normas e políticas de segurança da informação e conformidade técnica"
+      },
+      {
+         "id":"15",
+         "pid":"15.3",
+         "nome":"Considerações quanto à auditoria de sistemas de informação"
+      }
+   ]
+}

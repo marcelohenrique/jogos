@@ -1,0 +1,75 @@
+{
+   "nome":"UML",
+   "linhas":[
+      {
+         "id":"1",
+         "nome":"Estruturais"
+      },
+      {
+         "id":"2",
+         "nome":"Comportamentais"
+      },
+      {
+         "id":"3",
+         "nome":"Interação"
+      }
+   ],
+   "processos":[
+      {
+         "id":"1",
+         "nome":"Diagrama de Classes"
+      },
+      {
+         "id":"1",
+         "nome":"Diagrama de Componentes"
+      },
+      {
+         "id":"1",
+         "nome":"Diagrama de Estrutura Composta"
+      },
+      {
+         "id":"1",
+         "nome":"Diagrama de Implantação"
+      },
+      {
+         "id":"1",
+         "nome":"Diagrama de Objetos"
+      },
+      {
+         "id":"1",
+         "nome":"Diagrama de Pacotes"
+      },
+      {
+         "id":"1",
+         "nome":"Diagrama de Perfis"
+      },
+      {
+         "id":"2",
+         "nome":"Diagrama de Atividade"
+      },
+      {
+         "id":"2",
+         "nome":"Diagrama de Casos de Uso"
+      },
+      {
+         "id":"2",
+         "nome":"Diagrama de Máquina de Estados"
+      },
+      {
+         "id":"3",
+         "nome":"Diagrama de Comunicação"
+      },
+      {
+         "id":"3",
+         "nome":"Diagrama de Interação Geral"
+      },
+      {
+         "id":"3",
+         "nome":"Diagrama de Sequência"
+      },
+      {
+         "id":"3",
+         "nome":"Diagrama de Tempo"
+      }
+   ]
+}

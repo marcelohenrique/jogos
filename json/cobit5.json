@@ -1,0 +1,212 @@
+{
+   "nome":"COBIT 5",
+   "linhas":[
+      {
+         "id":"1",
+         "nome":"EDM"
+      },
+      {
+         "id":"2",
+         "nome":"APO"
+      },
+      {
+         "id":"3",
+         "nome":"BAI"
+      },
+      {
+         "id":"4",
+         "nome":"DSS"
+      },
+      {
+         "id":"5",
+         "nome":"MEA"
+      }
+   ],
+   "processos":[
+      {
+         "id":"1",
+         "pid":"EDM01 Garantir a",
+         "nome":"Definição e Manutenção do Modelo de Governança"
+      },
+      {
+         "id":"1",
+         "pid":"EDM02 Garantir a",
+         "nome":"Realização de Benefícios"
+      },
+      {
+         "id":"1",
+         "pid":"EDM03 Garantir a",
+         "nome":"Otimização do Risco"
+      },
+      {
+         "id":"1",
+         "pid":"EDM04 Garantir a",
+         "nome":"Otimização dos Recursos"
+      },
+      {
+         "id":"1",
+         "pid":"EDM05 Garantir",
+         "nome":"Transparência para as Partes Interessadas"
+      },
+      {
+         "id":"2",
+         "pid":"APO01 Gerenciar a",
+         "nome":"Estrutura de Gestão de TI"
+      },
+      {
+         "id":"2",
+         "pid":"APO02 Gerenciar a",
+         "nome":"Estratégia"
+      },
+      {
+         "id":"2",
+         "pid":"APO03 Gerenciar",
+         "nome":"Arquitetura da Organização"
+      },
+      {
+         "id":"2",
+         "pid":"APO04 Gerenciar",
+         "nome":"Inovação"
+      },
+      {
+         "id":"2",
+         "pid":"APO05 Gerenciar",
+         "nome":"Portifólio"
+      },
+      {
+         "id":"2",
+         "pid":"APO06 Gerenciar",
+         "nome":"Orçamento e Custos"
+      },
+      {
+         "id":"2",
+         "pid":"APO07 Gerenciar",
+         "nome":"Recursos Humanos"
+      },
+      {
+         "id":"2",
+         "pid":"APO08 Gerenciar",
+         "nome":"Relacionamentos"
+      },
+      {
+         "id":"2",
+         "pid":"APO09 Gerenciar",
+         "nome":"Contratos de Prestação de Serviços"
+      },
+      {
+         "id":"2",
+         "pid":"APO10 Gerenciar",
+         "nome":"Fornecedores"
+      },
+      {
+         "id":"2",
+         "pid":"APO11 Gerenciar",
+         "nome":"Qualidade"
+      },
+      {
+         "id":"2",
+         "pid":"APO12 Gerenciar",
+         "nome":"Riscos"
+      },
+      {
+         "id":"2",
+         "pid":"APO13 Gerenciar",
+         "nome":"Segurança"
+      },
+      {
+         "id":"3",
+         "pid":"BAI01 Gerenciar",
+         "nome":"Programas e Projetos"
+      },
+      {
+         "id":"3",
+         "pid":"BAI02 Gerenciar",
+         "nome":"Definição de Requisitos"
+      },
+      {
+         "id":"3",
+         "pid":"BAI03 Gerenciar",
+         "nome":"Identificação e Desenvolvimento de Soluções"
+      },
+      {
+         "id":"3",
+         "pid":"BAI04 Gerenciar",
+         "nome":"Disponibilidade e Capacidade"
+      },
+      {
+         "id":"3",
+         "pid":"BAI05 Gerenciar",
+         "nome":"Capacidade de Mudança Organizacional"
+      },
+      {
+         "id":"3",
+         "pid":"BAI06 Gerenciar",
+         "nome":"Mudanças"
+      },
+      {
+         "id":"3",
+         "pid":"BAI07 Gerenciar",
+         "nome":"Aceitação e Transição de Mudança"
+      },
+      {
+         "id":"3",
+         "pid":"BAI08 Gerenciar",
+         "nome":"Conhecimento"
+      },
+      {
+         "id":"3",
+         "pid":"BAI09 Gerenciar",
+         "nome":"Ativos"
+      },
+      {
+         "id":"3",
+         "pid":"BAI10 Gerenciar",
+         "nome":"Configuração"
+      },
+      {
+         "id":"4",
+         "pid":"DSS01 Gerenciar",
+         "nome":"Operações"
+      },
+      {
+         "id":"4",
+         "pid":"DSS02 Gerenciar",
+         "nome":"Solicitações e Incidentes de Serviços"
+      },
+      {
+         "id":"4",
+         "pid":"DSS03 Gerenciar",
+         "nome":"Problemas"
+      },
+      {
+         "id":"4",
+         "pid":"DSS04 Gerenciar",
+         "nome":"Continuidade"
+      },
+      {
+         "id":"4",
+         "pid":"DSS05 Gerenciar",
+         "nome":"Serviços de Segurança"
+      },
+      {
+         "id":"4",
+         "pid":"DSS06 Gerenciar",
+         "nome":"Controles do Processo de Negócio"
+      },
+      {
+         "id":"5",
+         "pid":"MEA01 Monitorar, Avaliar e Analisar",
+         "nome":"Desempenho e Conformidade"
+      },
+      {
+         "id":"5",
+         "pid":"MEA02 Monitorar, Avaliar e Analisar o",
+         "nome":"Sistema de Controle Interno"
+      },
+      {
+         "id":"5",
+         "pid":"MEA03 Monitorar, Avaliar e Analisar",
+         "nome":"Conformidade com Requisitos Externos"
+      }
+   ]
+}

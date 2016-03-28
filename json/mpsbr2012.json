@@ -1,0 +1,119 @@
+{
+   "nome":"MPS.BR 2012",
+   "linhas":[
+      {
+         "id":"1-1",
+         "nome":"A - Em Otimização"
+      },
+      {
+         "id":"2-1",
+         "nome":"B - Gerenciado Quantitativamente"
+      },
+      {
+         "id":"3-1",
+         "nome":"C - Definido"
+      },
+      {
+         "id":"4-1",
+         "nome":"D - Largamente Definido"
+      },
+      {
+         "id":"5-1",
+         "nome":"E - Parcialmente Definido"
+      },
+      {
+         "id":"6-1",
+         "nome":"F - Gerenciado"
+      },
+      {
+         "id":"7-1",
+         "nome":"G - Parcialmente Gerenciado"
+      }
+   ],
+   "processos":[
+      {
+         "id":"2-1",
+         "nome":"Gerência de Projetos – GPR (evolução<SUP>2</SUP>)"
+      },
+      {
+         "id":"3-1",
+         "nome":"Gerência de Riscos – GRI"
+      },
+      {
+         "id":"3-1",
+         "nome":"Desenvolvimento para Reutilização – DRU"
+      },
+      {
+         "id":"3-1",
+         "nome":"Gerência de Decisões – GDE"
+      },
+      {
+         "id":"4-1",
+         "nome":"Verificação – VER"
+      },
+      {
+         "id":"4-1",
+         "nome":"Validação – VAL"
+      },
+      {
+         "id":"4-1",
+         "nome":"Projeto e Construção do Produto – PCP"
+      },
+      {
+         "id":"4-1",
+         "nome":"Integração do Produto – ITP"
+      },
+      {
+         "id":"4-1",
+         "nome":"Desenvolvimento de Requisitos – DRE"
+      },
+      {
+         "id":"5-1",
+         "nome":"Gerência de Projetos – GPR (evolução<SUP>1</SUP>)"
+      },
+      {
+         "id":"5-1",
+         "nome":"Gerência de Reutilização – GRU"
+      },
+      {
+         "id":"5-1",
+         "nome":"Gerência de Recursos Humanos – GRH"
+      },
+      {
+         "id":"5-1",
+         "nome":"Definição do Processo Organizacional – DFP"
+      },
+      {
+         "id":"5-1",
+         "nome":"Avaliação e Melhoria do Processo Organizacional – AMP"
+      },
+      {
+         "id":"6-1",
+         "nome":"Medição – MED"
+      },
+      {
+         "id":"6-1",
+         "nome":"Garantia da Qualidade – GQA"
+      },
+      {
+         "id":"6-1",
+         "nome":"Gerência de Portfólio de Projetos – GPP"
+      },
+      {
+         "id":"6-1",
+         "nome":"Gerência de Configuração – GCO"
+      },
+      {
+         "id":"6-1",
+         "nome":"Aquisição – AQU"
+      },
+      {
+         "id":"7-1",
+         "nome":"Gerência de Requisitos – GRE"
+      },
+      {
+         "id":"7-1",
+         "nome":"Gerência de Projetos – GPR"
+      }
+   ]
+}

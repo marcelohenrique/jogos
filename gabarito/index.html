@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-2.0.1.min.js"></script>
+<script>
+    $(document).bind('mobileinit',function(){
+        $.mobile.pushStateEnabled = false;
+    });
+    function mostra() {
+        var respostas = ['E','E','C','E','C','C','E','C','C','E','C','E','C','E','E','E','E','C','C','E','C','C','E','C','C','E','C','C','C','E','C','C','E','E','C','C','E','E','E','E','E','E','E','E','C','C','C','C','C','E','C','E','E','E','E','E','C','E','C','C','E','C','E','C','E','E','E','C','C','E'];
+        var questao = $('#questao');
+        var gabarito = $('#gabarito').html(questao.val() + '. ' + respostas[questao.val() - 1]);
+    }
+</script>
+<script
+	src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<meta charset="UTF-8">
+<title>Gabarito</title>
+</head>
+<body>
+	Questão:
+	<input id="questao" type="number" />
+	<button onclick="mostra()">Gabarito</button>
+	<h1 id="gabarito"></h1>
+</body>
+</html>
