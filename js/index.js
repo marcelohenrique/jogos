@@ -1,5 +1,14 @@
 $(document).ready(function() {
-	informacoes('uml', 'uml');
+	$.getJSON('json/jogos.json', function(context) {
+		$.get('pages/template_index.html', function(templateScript) {
+			var template = Handlebars.compile(templateScript);
+			var html = template(context);
+			$('#content-placeholder').html(html);
+		}, 'html');
+		// for ( var jogo in context.jogos) {
+		// informacoes(jogo.id, jogo.id);
+		// }
+	});
 });
 
 function informacoes(id, nome) {

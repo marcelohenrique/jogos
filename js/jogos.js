@@ -12,23 +12,25 @@ $(document).ready(function() {
 });
 
 function comeca() {
-	var templateScript = $('#template').html();
-	var template = Handlebars.compile(templateScript);
-	var html = template(json);
-	$('.content-placeholder').html(html);
-	$('title').html('Jogo - ' + json.nome);
+	// var templateScript = $('#template').html();
+	$.get('../pages/template_jogo.html', function(templateScript) {
+		var template = Handlebars.compile(templateScript);
+		var html = template(json);
+		$('.content-placeholder').html(html);
+		$('title').html('Jogo - ' + json.nome);
 
-	informacoes('cookie', jogo);
+		informacoes('cookie', jogo);
 
-	init(json.processos);
+		init(json.processos);
 
-	$('#limpar').on('click', function() {
-		var $btn = $(this).button('loading');
+		$('#limpar').on('click', function() {
+			var $btn = $(this).button('loading');
 
-		comeca(json);
+			comeca(json);
 
-		$btn.button('reset');
-	})
+			$btn.button('reset');
+		})
+	}, 'html');
 }
 
 function init(processos) {
