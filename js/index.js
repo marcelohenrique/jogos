@@ -4,18 +4,29 @@ $(document).ready(function() {
 			var template = Handlebars.compile(templateScript);
 			var html = template(context);
 			$('#content-placeholder').html(html);
+
+			for ( var i in context.jogos) {
+				var jogo = context.jogos[i];
+				informacoes(jogo.id, jogo.id);
+			}
 		}, 'html');
-		// for ( var jogo in context.jogos) {
-		// informacoes(jogo.id, jogo.id);
-		// }
 	});
 });
 
 function informacoes(id, nome) {
 	$('#' + id + '_data').html(
-			'Último: ' + localStorage.getItem(nome + '_data'));
+			'<small><strong>Último:</strong> '
+					+ (localStorage.getItem(nome + '_data') == null ? 'n/a'
+							: localStorage.getItem(nome + '_data'))
+					+ '</small>');
 	$('#' + id + '_acertos').html(
-			'Acertos: ' + localStorage.getItem(nome + '_acertos'));
+			'<small><strong>Acertos:</strong> '
+					+ (localStorage.getItem(nome + '_acertos') == null ? 'n/a'
+							: localStorage.getItem(nome + '_acertos'))
+					+ '</small>');
 	$('#' + id + '_erros').html(
-			'Erros: ' + localStorage.getItem(nome + '_erros'));
+			'<small><strong>Erros:</strong> '
+					+ (localStorage.getItem(nome + '_erros') == null ? 'n/a'
+							: localStorage.getItem(nome + '_erros'))
+					+ '</small>');
 }
