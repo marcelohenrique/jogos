@@ -123,9 +123,12 @@ function acertoMizeravi( processCard, processBody ) {
 
    if ( linkedListProcess.length == 0 ) {
       $( '.process' ).append( 'Acertô, mizeravi! :D' );
+
       localStorage.setItem( jogo + '_data', new Date() );
       localStorage.setItem( jogo + '_acertos', $( '.hit' ).text() );
       localStorage.setItem( jogo + '_erros', $( '.error' ).text() );
+
+      informacoes( 'cookie', jogo );
    } else {
       appendProcess( linkedListProcess.first.data );
    }
