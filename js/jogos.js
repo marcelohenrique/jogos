@@ -2,162 +2,161 @@ var json;
 var linkedListProcess;
 var jogo;
 
-$(document).ready(function() {
-	jogo = $.url('?jogo');
-	$.getJSON('../json/' + jogo + '.json', function(context) {
-		json = context;
+$( document ).ready( function() {
+   jogo = $.url( '?jogo' );
+   $.getJSON( '../json/' + jogo + '.json', function( context ) {
+      json = context;
 
-		comeca();
-	});
-});
+      comeca();
+   } );
+} );
 
 function comeca() {
-	// var templateScript = $('#template').html();
-	$.get('../pages/template_jogo.html', function(templateScript) {
-		var template = Handlebars.compile(templateScript);
-		var html = template(json);
-		$('.content-placeholder').html(html);
-		$('title').html('Jogo - ' + json.nome);
+   $.get( '../pages/template_jogo.html', function( templateScript ) {
+      var template = Handlebars.compile( templateScript );
+      var html = template( json );
+      $( '.content-placeholder' ).html( html );
+      $( 'title' ).html( 'Jogo - ' + json.nome );
 
-		informacoes('cookie', jogo);
+      informacoes( 'cookie', jogo );
 
-		init(json.processos);
+      init( json.processos );
 
-		$('#limpar').on('click', function() {
-			var $btn = $(this).button('loading');
+      $( '#limpar' ).on( 'click', function() {
+         var $btn = $( this ).button( 'loading' );
 
-			comeca(json);
+         comeca( json );
 
-			$btn.button('reset');
-		})
-	}, 'html');
+         $btn.button( 'reset' );
+      } )
+   }, 'html' );
 }
 
-function init(processos) {
-	linkedListProcess = new LinkedList();
-	var gruposDiv = $('#grupos');
+function init( processos ) {
+   linkedListProcess = new LinkedList();
+   var gruposDiv = $( '#grupos' );
 
-	shuffle(processos);
+   shuffle( processos );
 
-	var divProcess = $('.process');
+   var divProcess = $( '.process' );
 
-	for (var i = 0; i < processos.length; i++) {
-		var p = processos[i];
+   for ( var i = 0; i < processos.length; i++ ) {
+      var p = processos[ i ];
 
-		linkedListProcess.append(new LinkedList.Node(p));
-	}
+      linkedListProcess.append( new LinkedList.Node( p ) );
+   }
 
-	atualizaProcessos();
+   atualizaProcessos();
 
-	appendProcess(linkedListProcess.first.data);
+   appendProcess( linkedListProcess.first.data );
 }
 
-function shuffle(array) {
-	var currentIndex = array.length, temporaryValue, randomIndex;
+function shuffle( array ) {
+   var currentIndex = array.length, temporaryValue, randomIndex;
 
-	// While there remain elements to shuffle...
-	while (0 !== currentIndex) {
+   // While there remain elements to shuffle...
+   while ( 0 !== currentIndex ) {
 
-		// Pick a remaining element...
-		randomIndex = Math.floor(Math.random() * currentIndex);
-		currentIndex -= 1;
+      // Pick a remaining element...
+      randomIndex = Math.floor( Math.random() * currentIndex );
+      currentIndex -= 1;
 
-		// And swap it with the current element.
-		temporaryValue = array[currentIndex];
-		array[currentIndex] = array[randomIndex];
-		array[randomIndex] = temporaryValue;
-	}
+      // And swap it with the current element.
+      temporaryValue = array[ currentIndex ];
+      array[ currentIndex ] = array[ randomIndex ];
+      array[ randomIndex ] = temporaryValue;
+   }
 
-	return array;
+   return array;
 }
 
-function appendProcess(processo) {
-	$('.process').append(
-			'<div class="process-card" id="' + processo.id + '" pid="'
-					+ processo.pid + '">' + processo.nome + '</div>');
+function appendProcess( processo ) {
+   $( '.process' ).append(
+         '<div class="process-card" id="' + processo.id + '" pid="'
+               + processo.pid + '">' + processo.nome + '</div>' );
 }
 
-function acertoMizeravi(processCard, processBody) {
-	var element = linkedListProcess.first;
-	linkedListProcess.remove(element);
+function acertoMizeravi( processCard, processBody ) {
+   var element = linkedListProcess.first;
+   linkedListProcess.remove( element );
 
-	$idProcessCard = processCard.attr("id");
-	$pid = processCard.attr("pid");
-	$idProcessBody = processBody.attr("id");
-	$text = processCard.text();
-	var processList = $('[id=' + $idProcessBody + ']>ul');
+   $idProcessCard = processCard.attr( "id" );
+   $pid = processCard.attr( "pid" );
+   $idProcessBody = processBody.attr( "id" );
+   $text = processCard.text();
+   var processList = $( '[id=' + $idProcessBody + ']>ul' );
 
-	processCard.remove();
+   processCard.remove();
 
-	if ($idProcessCard == $idProcessBody) {
-		atualizaProcessos();
+   if ( $idProcessCard == $idProcessBody ) {
+      atualizaProcessos();
 
-		incrementa('.hit');
-		incrementa('#badge-' + $idProcessCard);
+      incrementa( '.hit' );
+      incrementa( '#badge-' + $idProcessCard );
 
-		var text = $text;
-		if ($pid != 'undefined') {
-			text = $pid + " " + $text;
-		}
-		$('<li class="sucess"></li>').text(text).appendTo(processList)
-				.addClass('sucess').effect("pulsate", {
-					times : 3
-				}, 1000);
-		setTimeout(function() {
-			$('.sucess').removeClass('sucess');
-		}, 3000);
+      var text = $text;
+      if ( $pid != 'undefined' ) {
+         text = $pid + " " + $text;
+      }
+      $( '<li class="sucess"></li>' ).text( text ).appendTo( processList )
+            .addClass( 'sucess' ).effect( "pulsate", {
+               times : 3
+            }, 1000 );
+      setTimeout( function() {
+         $( '.sucess' ).removeClass( 'sucess' );
+      }, 3000 );
 
-	} else {
+   } else {
 
-		incrementa('.error');
+      incrementa( '.error' );
 
-		$('<li id="fail"></li>').text($text).appendTo(processList).addClass(
-				"fail").effect("pulsate", {
-			times : 3
-		}, 1000);
-		setTimeout(function() {
-			$('#fail').remove();
-		}, 3000);
+      $( '<li id="fail"></li>' ).text( $text ).appendTo( processList )
+            .addClass( "fail" ).effect( "pulsate", {
+               times : 3
+            }, 1000 );
+      setTimeout( function() {
+         $( '#fail' ).remove();
+      }, 3000 );
 
-		linkedListProcess.append(element);
-	}
+      linkedListProcess.append( element );
+   }
 
-	if (linkedListProcess.length == 0) {
-		$('.process').append('Acertô, mizeravi! :D');
-		localStorage.setItem(jogo + '_data', new Date());
-		localStorage.setItem(jogo + '_acertos', $('.hit').text());
-		localStorage.setItem(jogo + '_erros', $('.error').text());
-	} else {
-		appendProcess(linkedListProcess.first.data);
-	}
+   if ( linkedListProcess.length == 0 ) {
+      $( '.process' ).append( 'Acertô, mizeravi! :D' );
+      localStorage.setItem( jogo + '_data', new Date() );
+      localStorage.setItem( jogo + '_acertos', $( '.hit' ).text() );
+      localStorage.setItem( jogo + '_erros', $( '.error' ).text() );
+   } else {
+      appendProcess( linkedListProcess.first.data );
+   }
 }
 
 function atualizaProcessos() {
-	$('#badge').text(linkedListProcess.length);
+   $( '#badge' ).text( linkedListProcess.length );
 }
 
-function incrementa(elemento) {
-	var e = $(elemento);
-	e.text(parseInt(e.text()) + 1);
+function incrementa( elemento ) {
+   var e = $( elemento );
+   e.text( parseInt( e.text() ) + 1 );
 }
 
-function Grupo(id, nome) {
-	this.id = id;
-	this.nome = nome;
-	this.processos = [];
+function Grupo( id, nome ) {
+   this.id = id;
+   this.nome = nome;
+   this.processos = [];
 
-	this.addProcessos = function(processos) {
-		for (var i = 0; i < processos.length; i++) {
-			var processo = processos[i];
+   this.addProcessos = function( processos ) {
+      for ( var i = 0; i < processos.length; i++ ) {
+         var processo = processos[ i ];
 
-			this.processos.push(processo);
-		}
+         this.processos.push( processo );
+      }
 
-		return this;
-	};
+      return this;
+   };
 }
 
-function Processo(id, nome) {
-	this.id = id;
-	this.nome = nome;
+function Processo( id, nome ) {
+   this.id = id;
+   this.nome = nome;
 }

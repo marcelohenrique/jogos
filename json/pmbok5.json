@@ -3,65 +3,80 @@
    "colunas":[
       {
          "id":"1",
-         "nome":"Iniciação"
+         "nome":"Inic.",
+         "descricao":"Iniciação"
       },
       {
          "id":"2",
-         "nome":"Planejamento"
+         "nome":"Planej.",
+         "descricao":"Planejamento"
       },
       {
          "id":"3",
-         "nome":"Execução"
+         "nome":"Exec.",
+         "descricao":"Execução"
       },
       {
          "id":"4",
-         "nome":"Monitoramento e Controle"
+         "nome":"Monit. e Contr.",
+         "descricao":"Monitoramento e Controle"
       },
       {
          "id":"5",
-         "nome":"Encerramento"
+         "nome":"Encer.",
+         "descricao":"Encerramento"
       }
    ],
    "linhas":[
       {
          "id":"4",
-         "nome":"Integração"
+         "nome":"Integ.",
+         "descricao":"Integração"
       },
       {
          "id":"5",
-         "nome":"Escopo"
+         "nome":"Esc.",
+         "descricao":"Escopo"
       },
       {
          "id":"6",
-         "nome":"Tempo"
+         "nome":"Tempo",
+         "descricao":"Tempo"
       },
       {
          "id":"7",
-         "nome":"Custos"
+         "nome":"Custos",
+         "descricao":"Custos"
       },
       {
          "id":"8",
-         "nome":"Qualidade"
+         "nome":"Qualid.",
+         "descricao":"Qualidade"
       },
       {
          "id":"9",
-         "nome":"RH"
+         "nome":"RH",
+         "descricao":"RH"
       },
       {
          "id":"10",
-         "nome":"Comunicação"
+         "nome":"Comun.",
+         "descricao":"Comunicação"
       },
       {
          "id":"11",
-         "nome":"Risco"
+         "nome":"Risco",
+         "descricao":"Risco"
       },
       {
          "id":"12",
-         "nome":"Aquisições"
+         "nome":"Aquis.",
+         "descricao":"Aquisições"
       },
       {
          "id":"13",
-         "nome":"Partes Interessadas"
+         "nome":"Partes Inter.",
+         "descricao":"Partes Interessadas"
       }
    ],
    "processos":[

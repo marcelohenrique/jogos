@@ -1,8 +1,6 @@
 .style {
-	/* margin: 1px 0px 1px 0px; */
 	min-height: 50px;
 	padding: 1px;
-	/* border: 1px solid black; */
 }
 
 .style-header {
@@ -36,6 +34,7 @@
 	border-radius: 3px;
 	padding: 3px;
 	min-height: 50px;
+	font-size: 12px;
 }
 
 /* Mixin */
@@ -81,7 +80,7 @@
 }
 
 .gutter-body ul {
-	padding-left: 20px;
+	padding-left: 10px;
 }
 
 .navbar-custom {
@@ -89,7 +88,7 @@
 }
 
 #grupos {
-	font-size: 12px;
+	font-size: 10px;
 }
 
 table {
@@ -105,4 +104,12 @@ td {
 	/* width: 70%; */
 	border: 1px solid white;
 	height: 50px;
+}
+
+.blue {
+	color: blue;
+}
+
+.red {
+	color: red;
 }
