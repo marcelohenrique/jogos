@@ -3,35 +3,50 @@
 	[
 		{
 			"id": "27002-2006-objetivosdecontrole",
-			"nome": "27002:2006 - Objetivos de Controle"
+			"nome": "27002:2006 - Objetivos de Controle",
+			"data": ""
 		},
+
 		{
 			"id": "cmmi13",
-			"nome": "CMMI 1.3"
+			"nome": "CMMI 1.3",
+			"data": ""
 		},
+
 		{
 			"id": "cobit5",
-			"nome": "COBIT 5"
+			"nome": "COBIT 5",
+			"data": ""
 		},
+
 		{
 			"id": "gof",
-			"nome": "GoF"
+			"nome": "GoF",
+			"data": ""
 		},
+
 		{
 			"id": "itil2011",
-			"nome": "ITIL 2011"
+			"nome": "ITIL 2011",
+			"data": ""
 		},
+
 		{
 			"id": "mpsbr2012",
-			"nome": "MPS.BR 2012"
+			"nome": "MPS.BR 2012",
+			"data": ""
 		},
+
 		{
 			"id": "pmbok5",
-			"nome": "PMBOK 5"
+			"nome": "PMBOK 5",
+			"data": ""
 		},
+
 		{
 			"id": "uml",
-			"nome": "UML"
+			"nome": "UML",
+			"data": ""
 		}
 	]
 }
