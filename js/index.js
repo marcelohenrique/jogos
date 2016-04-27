@@ -26,10 +26,24 @@ var dias = [ 'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb' ];
 
 function formata( dataStr ) {
    var data = new Date( dataStr );
-   return dias[ data.getDay() ] + ', ' + data.getDate() + '/'
-         + ( data.getMonth() < 9 ? '0' : '' ) + ( data.getMonth() + 1 ) + '/'
-         + data.getFullYear() + ' ' + data.getHours() + ':' + data.getMinutes()
-         + ':' + data.getSeconds() + '.';
+   var diaDaSemana = dias[ data.getDay() ];
+   var diaDoMes = zeroAEsquerda( data.getDate() );
+   var mes = zeroAEsquerda( data.getMonth() + 1 );
+   var ano = zeroAEsquerda( data.getFullYear() );
+   var horas = zeroAEsquerda( data.getHours() );
+   var minutos = zeroAEsquerda( data.getMinutes() );
+   var segundos = zeroAEsquerda( data.getSeconds() );
+
+   return diaDaSemana + ', ' + diaDoMes + '/' + mes + '/' + ano + ' ' + horas
+         + ':' + minutos + ':' + segundos + '.';
+}
+
+function zeroAEsquerda( numero ) {
+   if ( numero < 10 ) {
+      return '0' + numero;
+   } else {
+      return numero;
+   }
 }
 
 function informacoes( id, nome ) {
