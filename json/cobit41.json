@@ -1,0 +1,193 @@
+{
+   "nome":"COBIT 4.1",
+   "linhas":[
+      {
+         "id":"1",
+         "nome":"PO"
+      },
+      {
+         "id":"2",
+         "nome":"AI"
+      },
+      {
+         "id":"3",
+         "nome":"DS"
+      },
+      {
+         "id":"4",
+         "nome":"ME"
+      }
+   ],
+   "processos":[
+      {
+         "id":"1",
+         "pid":"PO1",
+         "nome":"Definir um Plano Estratégico de TI"
+      },
+      {
+         "id":"1",
+         "pid":"PO2",
+         "nome":"Definir a Arquitetura de Informação"
+      },
+      {
+         "id":"1",
+         "pid":"PO3",
+         "nome":"Determinar as Diretrizes de Tecnologia"
+      },
+      {
+         "id":"1",
+         "pid":"PO4",
+         "nome":"Definir os Processos, Organização e Relacionamentos de TI"
+      },
+      {
+         "id":"1",
+         "pid":"PO5",
+         "nome":"Gerenciar o Investimento em TI"
+      },
+      {
+         "id":"1",
+         "pid":"PO6",
+         "nome":"Comunicar Metas e Diretrizes Gerenciais"
+      },
+      {
+         "id":"1",
+         "pid":"PO7",
+         "nome":"Gerenciar os Recursos Humanos de TI"
+      },
+      {
+         "id":"1",
+         "pid":"PO8",
+         "nome":"Gerenciar Qualidade"
+      },
+      {
+         "id":"1",
+         "pid":"PO9",
+         "nome":"Avaliar e Gerenciar os Riscos de TI"
+      },
+      {
+         "id":"1",
+         "pid":"PO10",
+         "nome":"Gerenciar Projetos"
+      },
+      {
+         "id":"2",
+         "pid":"AI1",
+         "nome":"Identificar Soluções Automatizadas"
+      },
+      {
+         "id":"2",
+         "pid":"AI2",
+         "nome":"Adquirir e Manter Software Aplicativo"
+      },
+      {
+         "id":"2",
+         "pid":"AI3",
+         "nome":"Adquirir e Manter Infraestrutura de Tecnologia"
+      },
+      {
+         "id":"2",
+         "pid":"AI4",
+         "nome":"Habilitar Operação e Uso"
+      },
+      {
+         "id":"2",
+         "pid":"AI5",
+         "nome":"Adquirir Recursos de TI"
+      },
+      {
+         "id":"2",
+         "pid":"AI6",
+         "nome":"Gerenciar Mudanças"
+      },
+      {
+         "id":"2",
+         "pid":"AI7",
+         "nome":"Instalar e Homologar Soluções e Mudanças"
+      },
+      {
+         "id":"3",
+         "pid":"DS1",
+         "nome":"Definir e Gerenciar Níveis de Serviços"
+      },
+      {
+         "id":"3",
+         "pid":"DS2",
+         "nome":"Gerenciar Serviços de Terceiros"
+      },
+      {
+         "id":"3",
+         "pid":"DS3",
+         "nome":"Gerenciar Capacidade e Desempenho"
+      },
+      {
+         "id":"3",
+         "pid":"DS4",
+         "nome":"Assegurar Continuidade dos Serviços"
+      },
+      {
+         "id":"3",
+         "pid":"DS5",
+         "nome":"Assegurar Segurança dos Sistemas"
+      },
+      {
+         "id":"3",
+         "pid":"DS6",
+         "nome":"Identificar e Alocar Custos"
+      },
+      {
+         "id":"3",
+         "pid":"DS7",
+         "nome":"Educar e Treinar os Usuários"
+      },
+      {
+         "id":"3",
+         "pid":"DS8",
+         "nome":"Gerenciar a Central de Serviços e Incidentes"
+      },
+      {
+         "id":"3",
+         "pid":"DS9",
+         "nome":"Gerenciar a Configuração"
+      },
+      {
+         "id":"3",
+         "pid":"DS10",
+         "nome":"Gerenciar os Problemas"
+      },
+      {
+         "id":"3",
+         "pid":"DS11",
+         "nome":"Gerenciar os Dados"
+      },
+      {
+         "id":"3",
+         "pid":"DS12",
+         "nome":"Gerenciar o Ambiente Físico"
+      },
+      {
+         "id":"3",
+         "pid":"DS13",
+         "nome":"Gerenciar as Operações"
+      },
+      {
+         "id":"4",
+         "pid":"ME1",
+         "nome":"Monitorar e Avaliar o Desempenho"
+      },
+      {
+         "id":"4",
+         "pid":"ME2",
+         "nome":"Monitorar e Avaliar os Controles Internos"
+      },
+      {
+         "id":"4",
+         "pid":"ME3",
+         "nome":"Assegurar Conformidade com Requisitos Externos"
+      },
+      {
+         "id":"4",
+         "pid":"ME4",
+         "nome":"Prover Governança de TI"
+      }
+   ]
+}
