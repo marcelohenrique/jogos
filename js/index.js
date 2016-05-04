@@ -1,26 +1,55 @@
-$( document ).ready( function() {
-   $.getJSON( 'json/jogos.json', function( context ) {
-      $.get( 'pages/template_index.html', function( templateScript ) {
-         for ( var i in context.jogos ) {
-            var jogo = context.jogos[ i ];
-            jogo.data = new Date( localStorage.getItem( jogo.id + '_data' ) );
-         }
+$( document ).ready(
+      function() {
+         $.getJSON( 'json/jogos.json', function( context ) {
+            $.get( 'pages/template_index.html',
+                  function( templateScript ) {
 
-         context.jogos.sort( function( a, b ) {
-            return a.data.getTime() - b.data.getTime();
+                     var jogosAtivos = {
+                        jogos : []
+                     };
+                     var jogosInativos = {
+                        jogos : []
+                     }
+
+                     while ( context.jogos.length > 0 ) {
+                        var jogo = context.jogos.shift();
+
+                        // context.jogos
+                        // .forEach( function( jogo ) {
+
+                        jogo.data = new Date( localStorage.getItem( jogo.id
+                              + '_data' ) );
+                        jogo.ativo = ( localStorage
+                              .getItem( jogo.id + '_ativo' ) === 'true' );
+
+                        if ( jogo.ativo ) {
+                           jogosAtivos.jogos.push( jogo );
+                        } else {
+                           jogosInativos.jogos.push( jogo );
+                        }
+
+                        // } );
+                     }
+
+                     jogosAtivos.jogos.sort( ordenaJogos );
+                     jogosInativos.jogos.sort( ordenaJogos );
+
+                     var template = Handlebars.compile( templateScript );
+                     var html = template( jogosAtivos );
+                     html += template( jogosInativos );
+                     $( '#content-placeholder' ).html( html );
+
+                     for ( var i in context.jogos ) {
+                        var jogo = context.jogos[ i ];
+                        informacoes( jogo.id, jogo.id );
+                     }
+                  }, 'html' );
          } );
+      } );
 
-         var template = Handlebars.compile( templateScript );
-         var html = template( context );
-         $( '#content-placeholder' ).html( html );
-
-         for ( var i in context.jogos ) {
-            var jogo = context.jogos[ i ];
-            informacoes( jogo.id, jogo.id );
-         }
-      }, 'html' );
-   } );
-} );
+function ordenaJogos( a, b ) {
+   return a.data.getTime() - b.data.getTime();
+}
 
 var dias = [ 'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb' ];
 
@@ -62,4 +91,9 @@ function informacoes( id, nome ) {
          '<small>'
                + ( localStorage.getItem( nome + '_erros' ) == null ? 'n/a'
                      : localStorage.getItem( nome + '_erros' ) ) + '</small>' );
+}
+
+function habilitaJogo( e ) {
+   localStorage.setItem( e.id, e.checked );
+   return true;
 }
