@@ -119,3 +119,7 @@ td {
 .striped>.row:nth-of-type(odd) {
 	background-color: #f9f9f9;
 }
+
+.danger {
+	background-color: #f2dede;
+}
