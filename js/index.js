@@ -4,18 +4,11 @@ $( document ).ready(
             $.get( 'pages/template_index.html',
                   function( templateScript ) {
 
-                     var jogosAtivos = {
-                        jogos : []
-                     };
-                     var jogosInativos = {
-                        jogos : []
-                     }
+                     var jogosAtivos = new Context();
+                     var jogosInativos = new Context();
 
                      while ( context.jogos.length > 0 ) {
                         var jogo = context.jogos.shift();
-
-                        // context.jogos
-                        // .forEach( function( jogo ) {
 
                         jogo.data = new Date( localStorage.getItem( jogo.id
                               + '_data' ) );
@@ -28,27 +21,36 @@ $( document ).ready(
                            jogosInativos.jogos.push( jogo );
                         }
 
-                        // } );
                      }
 
-                     jogosAtivos.jogos.sort( ordenaJogos );
-                     jogosInativos.jogos.sort( ordenaJogos );
+                     montaTemplate( templateScript,
+                           '#content-placeholder-ativos', jogosAtivos );
+                     montaTemplate( templateScript,
+                           '#content-placeholder-inativos', jogosInativos );
 
-                     var template = Handlebars.compile( templateScript );
-                     var html = template( jogosAtivos );
-                     html += template( jogosInativos );
-                     $( '#content-placeholder' ).html( html );
-
-                     for ( var i in context.jogos ) {
-                        var jogo = context.jogos[ i ];
-                        informacoes( jogo.id, jogo.id );
-                     }
                   }, 'html' );
          } );
       } );
 
+function Context() {
+   this.jogos = [];
+}
+
 function ordenaJogos( a, b ) {
    return a.data.getTime() - b.data.getTime();
+}
+
+function montaTemplate( templateScript, contentPlaceholder, context ) {
+   context.jogos.sort( ordenaJogos );
+
+   var template = Handlebars.compile( templateScript );
+   var html = template( context );
+   $( contentPlaceholder ).html( html );
+
+   for ( var i in context.jogos ) {
+      var jogo = context.jogos[ i ];
+      informacoes( jogo.id, jogo.id );
+   }
 }
 
 var dias = [ 'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb' ];
