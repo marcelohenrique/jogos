@@ -18,6 +18,7 @@
 
 .gutter-body {
 	margin: 1px 0px 1px -14px;
+	font-size: 6px;
 }
 
 .gutter-body:hover {
