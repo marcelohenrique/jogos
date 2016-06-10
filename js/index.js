@@ -1,35 +1,80 @@
-$( document ).ready( function() {
-   $.getJSON( 'json/jogos.json', function( context ) {
-      $.get( 'pages/template_index.html', function( templateScript ) {
-         for ( var i in context.jogos ) {
-            var jogo = context.jogos[ i ];
-            jogo.data = new Date( localStorage.getItem( jogo.id + '_data' ) );
-         }
+$( document ).ready(
+      function() {
+         $.getJSON( 'json/jogos.json', function( context ) {
+            $.get( 'pages/template_index.html',
+                  function( templateScript ) {
 
-         context.jogos.sort( function( a, b ) {
-            return a.data.getTime() - b.data.getTime();
+                     var jogosAtivos = new Context();
+                     var jogosInativos = new Context();
+
+                     while ( context.jogos.length > 0 ) {
+                        var jogo = context.jogos.shift();
+
+                        jogo.data = new Date( localStorage.getItem( jogo.id
+                              + '_data' ) );
+                        jogo.ativo = ( localStorage
+                              .getItem( jogo.id + '_ativo' ) === 'true' );
+
+                        if ( jogo.ativo ) {
+                           jogosAtivos.jogos.push( jogo );
+                        } else {
+                           jogosInativos.jogos.push( jogo );
+                        }
+
+                     }
+
+                     montaTemplate( templateScript,
+                           '#content-placeholder-ativos', jogosAtivos );
+                     montaTemplate( templateScript,
+                           '#content-placeholder-inativos', jogosInativos );
+
+                  }, 'html' );
          } );
+      } );
 
-         var template = Handlebars.compile( templateScript );
-         var html = template( context );
-         $( '#content-placeholder' ).html( html );
+function Context() {
+   this.jogos = [];
+}
 
-         for ( var i in context.jogos ) {
-            var jogo = context.jogos[ i ];
-            informacoes( jogo.id, jogo.id );
-         }
-      }, 'html' );
-   } );
-} );
+function ordenaJogos( a, b ) {
+   return a.data.getTime() - b.data.getTime();
+}
+
+function montaTemplate( templateScript, contentPlaceholder, context ) {
+   context.jogos.sort( ordenaJogos );
+
+   var template = Handlebars.compile( templateScript );
+   var html = template( context );
+   $( contentPlaceholder ).html( html );
+
+   for ( var i in context.jogos ) {
+      var jogo = context.jogos[ i ];
+      informacoes( jogo.id, jogo.id );
+   }
+}
 
 var dias = [ 'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb' ];
 
 function formata( dataStr ) {
    var data = new Date( dataStr );
-   return dias[ data.getDay() ] + ', ' + data.getDate() + '/'
-         + ( data.getMonth() < 9 ? '0' : '' ) + ( data.getMonth() + 1 ) + '/'
-         + data.getFullYear() + ' ' + data.getHours() + ':' + data.getMinutes()
-         + ':' + data.getSeconds() + '.';
+   var diaDaSemana = dias[ data.getDay() ];
+   var diaDoMes = zeroAEsquerda( data.getDate() );
+   var mes = zeroAEsquerda( data.getMonth() + 1 );
+   var ano = zeroAEsquerda( data.getFullYear() );
+   var horas = zeroAEsquerda( data.getHours() );
+   var minutos = zeroAEsquerda( data.getMinutes() );
+   var segundos = zeroAEsquerda( data.getSeconds() );
+
+   return diaDaSemana + ', ' + diaDoMes + '/' + mes + '/' + ano + ' ' + horas
+         + ':' + minutos + ':' + segundos + '.';
+}
+
+function zeroAEsquerda( numero ) {
+   if ( numero < 10 ) {
+      return '0' + numero;
+   } else {
+      return numero;
+   }
 }
 
 function informacoes( id, nome ) {
@@ -48,4 +93,9 @@ function informacoes( id, nome ) {
          '<small>'
                + ( localStorage.getItem( nome + '_erros' ) == null ? 'n/a'
                      : localStorage.getItem( nome + '_erros' ) ) + '</small>' );
+}
+
+function habilitaJogo( e ) {
+   localStorage.setItem( e.id, e.checked );
+   return true;
 }
