@@ -60,13 +60,13 @@ function formata( dataStr ) {
    var diaDaSemana = dias[ data.getDay() ];
    var diaDoMes = zeroAEsquerda( data.getDate() );
    var mes = zeroAEsquerda( data.getMonth() + 1 );
-   var ano = zeroAEsquerda( data.getFullYear() );
+   var ano = zeroAEsquerda( data.getFullYear() % 2000 );
    var horas = zeroAEsquerda( data.getHours() );
    var minutos = zeroAEsquerda( data.getMinutes() );
    var segundos = zeroAEsquerda( data.getSeconds() );
 
    return diaDaSemana + ', ' + diaDoMes + '/' + mes + '/' + ano + ' ' + horas
-         + ':' + minutos + ':' + segundos + '.';
+         + ':' + minutos + /*':' + segundos +*/ '.';
 }
 
 function zeroAEsquerda( numero ) {
