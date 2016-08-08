@@ -1,43 +1,45 @@
-$( document ).ready(
-      function() {
-         $.getJSON( 'json/jogos.json', function( context ) {
-            $.get( 'pages/template_index.html',
-                  function( templateScript ) {
+var jogos_json;
+var template_index;
 
-                     var jogosAtivos = new Context();
-                     var jogosInativos = new Context();
+var dias = [ 'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb' ];
 
-                     while ( context.jogos.length > 0 ) {
-                        var jogo = context.jogos.shift();
+$( document ).ready( function() {
+   $.getJSON( 'json/jogos.json', function( context ) {
+      $.get( 'pages/template_index.html', function( templateScript ) {
+         jogos_json = context;
+         template_index = templateScript;
 
-                        jogo.data = new Date( localStorage.getItem( jogo.id
-                              + '_data' ) );
-                        jogo.ativo = ( localStorage
-                              .getItem( jogo.id + '_ativo' ) === 'true' );
+         montaJogosAtivosInativos();
+      }, 'html' );
+   } );
+} );
 
-                        if ( jogo.ativo ) {
-                           jogosAtivos.jogos.push( jogo );
-                        } else {
-                           jogosInativos.jogos.push( jogo );
-                        }
+function montaJogosAtivosInativos() {
+   var jogosAtivos = new Context();
+   var jogosInativos = new Context();
 
-                     }
+   jogos_json.jogos.forEach( function( jogo, index ) {
+      jogo.data = new Date( localStorage.getItem( jogo.id + '_data' ) );
+      jogo.ativo = ( localStorage.getItem( jogo.id + '_ativo' ) === 'true' );
 
-                     montaTemplate( templateScript,
-                           '#content-placeholder-ativos', jogosAtivos );
-                     montaTemplate( templateScript,
-                           '#content-placeholder-inativos', jogosInativos );
+      if ( jogo.ativo ) {
+         jogosAtivos.jogos.push( jogo );
+      } else {
+         jogosInativos.jogos.push( jogo );
+      }
+   } );
 
-                  }, 'html' );
-         } );
-      } );
+   montaTelaInicialJogos( jogosAtivos, jogosInativos );
+}
 
 function Context() {
    this.jogos = [];
 }
 
-function ordenaJogos( a, b ) {
-   return a.data.getTime() - b.data.getTime();
+function montaTelaInicialJogos( jogosAtivos, jogosInativos ) {
+   montaTemplate( template_index, '#content-placeholder-ativos', jogosAtivos );
+   montaTemplate( template_index, '#content-placeholder-inativos',
+         jogosInativos );
 }
 
 function montaTemplate( templateScript, contentPlaceholder, context ) {
@@ -53,28 +55,8 @@ function montaTemplate( templateScript, contentPlaceholder, context ) {
    }
 }
 
-var dias = [ 'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb' ];
-
-function formata( dataStr ) {
-   var data = new Date( dataStr );
-   var diaDaSemana = dias[ data.getDay() ];
-   var diaDoMes = zeroAEsquerda( data.getDate() );
-   var mes = zeroAEsquerda( data.getMonth() + 1 );
-   var ano = zeroAEsquerda( data.getFullYear() % 2000 );
-   var horas = zeroAEsquerda( data.getHours() );
-   var minutos = zeroAEsquerda( data.getMinutes() );
-   var segundos = zeroAEsquerda( data.getSeconds() );
-
-   return diaDaSemana + ', ' + diaDoMes + '/' + mes + '/' + ano + ' ' + horas
-         + ':' + minutos + /*':' + segundos +*/ '.';
-}
-
-function zeroAEsquerda( numero ) {
-   if ( numero < 10 ) {
-      return '0' + numero;
-   } else {
-      return numero;
-   }
+function ordenaJogos( a, b ) {
+   return a.data.getTime() - b.data.getTime();
 }
 
 function informacoes( id, nome ) {
@@ -95,7 +77,30 @@ function informacoes( id, nome ) {
                      : localStorage.getItem( nome + '_erros' ) ) + '</small>' );
 }
 
+function formata( dataStr ) {
+   var data = new Date( dataStr );
+   var diaDaSemana = dias[ data.getDay() ];
+   var diaDoMes = zeroAEsquerda( data.getDate() );
+   var mes = zeroAEsquerda( data.getMonth() + 1 );
+   var ano = zeroAEsquerda( data.getFullYear() % 2000 );
+   var horas = zeroAEsquerda( data.getHours() );
+   var minutos = zeroAEsquerda( data.getMinutes() );
+   var segundos = zeroAEsquerda( data.getSeconds() );
+
+   return diaDaSemana + ', ' + diaDoMes + '/' + mes + '/' + ano + ' ' + horas
+         + ':' + minutos + '.';
+}
+
+function zeroAEsquerda( numero ) {
+   if ( numero < 10 ) {
+      return '0' + numero;
+   } else {
+      return numero;
+   }
+}
+
 function habilitaJogo( e ) {
    localStorage.setItem( e.id, e.checked );
+   montaJogosAtivosInativos()
    return true;
 }
