@@ -92,7 +92,7 @@ function acertoMizeravi( processCard, processBody ) {
       atualizaProcessos();
 
       incrementa( '.hit' );
-      incrementa( '#badge-' + $idProcessCard );
+      incrementa( '#badge-' + $idProcessCard.split('-')[0] );
 
       var text = $text;
       if ( $pid != 'undefined' ) {

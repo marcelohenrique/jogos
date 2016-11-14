@@ -101,6 +101,6 @@ function zeroAEsquerda( numero ) {
 
 function habilitaJogo( e ) {
    localStorage.setItem( e.id, e.checked );
-   montaJogosAtivosInativos()
+   montaJogosAtivosInativos();
    return true;
 }
