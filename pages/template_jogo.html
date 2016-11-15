@@ -43,37 +43,34 @@
 
 	<div class="row">
 		<div id="grupos" class="col-xs-12">
-			<table>
-				{{#if colunas}}
-				<thead>
-					<tr>
-						<th scope="col" style="background: none; border: 0;"></th> {{#each
-						colunas}}
-						<th scope="col"
-							class="style style-header gutter-header text-center"><b>{{nome}}</b></th>
+			<div class="table-responsive">
+				<table class="table table-bordered table-hover">
+					{{#if colunas}}
+					<thead>
+						<tr>
+							<th scope="col"></th> {{#each colunas}}
+							<th scope="col"><b>{{nome}}</b></th> {{/each}}
+						</tr>
+					</thead>
+					{{/if}}
+					<tbody>
+						{{#each linhas}}
+						<tr>
+							<th scope="row">{{nome}}<br /> <span id="badge-{{id}}"
+								class="badge">0</span></th> {{#if ../colunas}} {{#each ../colunas}}
+							<td id="{{../id}}-{{id}}"
+								onclick="acertoMizeravi($('.process-card'), $('#{{../id}}-{{id}}'))">
+								<ul></ul>
+							</td> {{/each}} {{else}}
+							<td id="{{id}}"
+								onclick="acertoMizeravi($('.process-card'), $('#{{id}}'))">
+								<ul></ul>
+							</td> {{/if}}
+						</tr>
 						{{/each}}
-					</tr>
-				</thead>
-				{{/if}}
-				<tbody>
-					{{#each linhas}}
-					<tr>
-						<th scope="row"
-							class="style style-header gutter-header text-center">{{nome}}<br />
-							<span id="badge-{{id}}" class="badge">0</span></th> {{#if ../colunas}}
-						{{#each ../colunas}}
-						<td id="{{../id}}-{{id}}" class="style style-body gutter-body"
-							onclick="acertoMizeravi($('.process-card'), $('#{{../id}}-{{id}}'))">
-							<ul></ul>
-						</td> {{/each}} {{else}}
-						<td id="{{id}}" class="style style-body gutter-body"
-							onclick="acertoMizeravi($('.process-card'), $('#{{id}}'))">
-							<ul></ul>
-						</td> {{/if}}
-					</tr>
-					{{/each}}
-				</tbody>
-			</table>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
 
@@ -117,9 +114,9 @@
 			Adaptado de:
 			<ul>
 				<li><a href="http://www.paradaprocafe.com.br/game/"
-					target="_blank">http://www.paradaprocafe.com.br/game/</a></li>
+					target="_blank">paradaprocafe.com.br</a></li>
 				<li><a href="http://tiagopassos.com/jogosdeprocessos/pmbok5/"
-					target="_blank">http://tiagopassos.com/jogosdeprocessos/pmbok5/</a></li>
+					target="_blank">tiagopassos.com</a></li>
 			</ul>
 		</div>
 	</div>
