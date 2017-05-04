@@ -12,16 +12,16 @@
       {
          "id":"3",
          "nome":"Manutenibilidade"
-      }
-	  {
+      },
+      {
          "id":"4",
          "nome":"Usabilidade"
-      }
-	  {
+      },
+      {
          "id":"5",
          "nome":"Portabilidade"
-      }
-	  {
+      },
+      {
          "id":"6",
          "nome":"Eficiência"
       }
