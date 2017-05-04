@@ -37,6 +37,13 @@
 		},
 
 		{
+			"id": "iso9126",
+			"nome": "ISO 9126",
+			"data": "",
+			"ativo": true
+		},
+
+		{
 			"id": "itil2011",
 			"nome": "ITIL 2011",
 			"data": "",
@@ -53,6 +60,13 @@
 		{
 			"id": "pmbok5",
 			"nome": "PMBOK 5",
+			"data": "",
+			"ativo": true
+		},
+
+		{
+			"id": "requisitosNaoFuncionais",
+			"nome": "Requisitos Não Funcionais",
 			"data": "",
 			"ativo": true
 		},
