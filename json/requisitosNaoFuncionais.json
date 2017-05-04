@@ -1,0 +1,63 @@
+{
+   "nome":"Requisitos não-funcionais",
+   "linhas":[
+      {
+         "id":"1",
+         "nome":"Requisitos de Produto"
+      },
+      {
+         "id":"2",
+         "nome":"Requisitos Organizacionais"
+      },
+      {
+         "id":"3",
+         "nome":"Requisitos Externos"
+      }
+   ],
+   "processos":[
+      {
+         "id":"1",
+         "nome":"Usabilidade"
+      },
+      {
+         "id":"1",
+         "nome":"Eficiência -desempenho e armazenamento-"
+      },
+      {
+         "id":"1",
+         "nome":"Portabilidade"
+      },
+      {
+         "id":"1",
+         "nome":"Confiabilidade"
+      },
+      {
+         "id":"2",
+         "nome":"Ambientais/Padrões"
+      },
+      {
+         "id":"2",
+         "nome":"Operacionais/Entrega"
+      },
+      {
+         "id":"2",
+         "nome":"Desenvolvimento/Implementacao"
+      },
+      {
+         "id":"3",
+         "nome":"Interoperabilidade"
+      },
+      {
+         "id":"3",
+         "nome":"Legais"
+      },
+       {
+         "id":"3",
+         "nome":"Privacidade"
+      },
+       {
+         "id":"3",
+         "nome":"Segurança"
+      }
+   ]
+}
