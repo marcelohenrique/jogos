@@ -1,3 +1,5 @@
+var dias = [ 'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb' ];
+
 function informacoes( id, nome ) {
    $( '#' + id + '_data' ).html(
          '<small>'
