@@ -4,7 +4,7 @@ var template_index;
 var dias = [ 'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb' ];
 
 $( document ).ready( function() {
-   $.getJSON( '../json/jogos.json', function( context ) {
+   $.getJSON( 'json/jogos.json', function( context ) {
       $.get( 'template_index.html', function( templateScript ) {
          jogos_json = context;
          template_index = templateScript;
