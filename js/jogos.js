@@ -22,13 +22,18 @@ function comeca() {
 
       init( json.processos );
 
+      $( '#voltar' ).on( 'click', function() {
+         window.location.href='http://marcelohenrique.github.io/jogos/';
+      } );
+
       $( '#limpar' ).on( 'click', function() {
          var $btn = $( this ).button( 'loading' );
 
          comeca( json );
 
          $btn.button( 'reset' );
-      } )
+      } );
+
    }, 'html' );
 }
 
